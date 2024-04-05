@@ -1,6 +1,15 @@
+
+import { Metadata } from "next";
 import Image from "next/image";
 import styles from './product_details.module.scss';
 import Accordion from "@/components/accordion";
+import CartAction from "@/app/ui/cartAction";
+
+export const metadata: Metadata = {
+  title: 'Product Details',
+  description: 'Plant Data',
+}
+
 
 export default async function Page({ params }: { params: { product_id: string; } }) {
   let data = [];
@@ -27,7 +36,7 @@ export default async function Page({ params }: { params: { product_id: string; }
         <p>{data.description}</p>
         <div className={styles.action}>
           <p className={styles.price}>${data?.price}</p>
-          <button className="button-primary">Add to cart</button>
+          <CartAction />
         </div>
         <Accordion title="Details">
           {Object.entries(data.details).map(([key, value]) => (
