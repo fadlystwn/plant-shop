@@ -14,7 +14,13 @@ export default async function Page({ params }: { params: { product_id: string; }
   return (
     <div className={styles.productDetails}>
       <div className={styles.productImage}>
-        <Image priority src={`/${data?.plant_name}.jpg`} alt={data?.plant_name} width={320} height={480} />
+        <Image
+          priority
+          src={`/${data?.plant_name}.jpg`}
+          alt={data?.plant_name}
+          width={320}
+          height={480}
+        />
       </div>
       <div className={styles.productInfo}>
         <h1>{data?.plant_name}</h1>
@@ -25,7 +31,7 @@ export default async function Page({ params }: { params: { product_id: string; }
         </div>
         <Accordion title="Details">
           {Object.entries(data.details).map(([key, value]) => (
-            <p className={styles.careItems} key={key}>{`${key}: ${value}`}</p>
+            <p className={styles.detailsItem} key={key}>{`${key}: ${value}`}</p>
           ))}
         </Accordion>
         <Accordion title="Care">
