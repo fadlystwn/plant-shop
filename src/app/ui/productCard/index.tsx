@@ -19,7 +19,7 @@ const ProductCard: React.FC<PlantProps> = ({ plant }) => {
   return (
     <Link href={`/products/${id}`}>
       <article className={styles.productCard}>
-        <Image src={`/${plant_name}.jpg`} alt={plant_name} width={300} height={300} />
+        <Image src={`/${plant_name.toLowerCase()}.jpg`} alt={plant_name} width={300} height={300} />
         <h3>{plant_name}</h3>
         <p>color: {color} size: {size} </p>
         <p>variant{variant} </p>
