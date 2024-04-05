@@ -1,0 +1,43 @@
+@import '../../app/styles/variables.scss';
+
+.footer {
+  background-color: $primary;
+  color: $primary-dark;
+  padding: .8rem 2rem;
+
+  .footerContent {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    display: flex;
+    margin-top: 2rem;
+
+    .footerSection {
+      flex: 1;
+      margin: 0 20px;
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          margin-bottom: 5px;
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    font-size: .8rem;
+    margin-top: 3rem ;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}

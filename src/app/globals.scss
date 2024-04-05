@@ -1,3 +1,6 @@
+@import 'styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&display=swap');
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -83,25 +86,66 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: $primary-dark;
+  background: $primary-light;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: $primary-dark;
+
+  &:hover {
+    color: $action;
+  }
+  &:focus {
+    color: $primary-dark;
+  }
+}
+p {
+  color: $secondary
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', serif;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.button-primary {
+  background: $action;
+  color: $primary-light;
+  text-transform: uppercase;
+  font-size: .8rem;
+  padding: .8rem 2rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: lighten($action, 15%);
+  }
+  &:active {
+    box-shadow: 0 0 0 3px darken($action, 3%)  
+  } 
+
+
+}
+
+.button-secondary {
+  @extend .button-primary;
+  background: $primary;
+  color: $primary-dark;
+  &:hover {
+    background: lighten($primary-dark, 15%);
+    color: white;
   }
 }

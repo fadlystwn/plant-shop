@@ -1,0 +1,28 @@
+@import "../styles/grid.scss";
+@import "../styles/mixin.scss";
+
+.products {
+    @include container;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+
+    .heading {
+      margin-top: 2rem;
+    }
+
+    .productGrid {
+        display: grid;
+        grid-gap: 1rem;
+        margin-top: 2rem;
+
+        @include breakpoint(sm) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+     
+        @include breakpoint (md) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+   
+}

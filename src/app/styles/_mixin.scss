@@ -1,0 +1,11 @@
+@import 'variables';
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin transition($properties, $duration: 0.5s, $timing-function: ease) {
+  transition: $properties $duration $timing-function;
+}
