@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { product_id: string; }
       <div className={styles.productImage}>
         <Image
           priority
-          src={`/${data?.plant_name}.jpg`}
+          src={`/${data?.plant_name.toLowerCase()}.jpg`}
           alt={data?.plant_name}
           width={320}
           height={480}
