@@ -1,14 +1,20 @@
 @import '../../styles//variables.scss';
+@import '../../styles//mixin.scss';
 
 .productCard {
     background-color: #fff;
     border-radius: 0.5rem;
     padding: .5rem;
     text-align: center;
+    width: 320px;
+    
+    @include breakpoint(xs) {
+        width: auto;
+    }
 
     img {
-        width: 100%;
         border-radius: 0.5rem;
+        object-fit: cover;
     }
 
     h3 {

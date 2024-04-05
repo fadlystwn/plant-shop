@@ -15,14 +15,15 @@ interface PlantProps {
 }
 
 const ProductCard: React.FC<PlantProps> = ({ plant }) => {
+  const { id, plant_name, color, size, variant, price } = plant;
   return (
-    <Link href={`/products/${plant?.id}`}>
+    <Link href={`/products/${id}`}>
       <article className={styles.productCard}>
-        <Image src={`/${plant?.plant_name}.jpg`} alt={plant?.plant_name} width={300} height={300} />
-        <h3>{plant?.plant_name}</h3>
-        <p>color: {plant?.color} size: {plant?.size} </p>
-        <p>variant{plant?.variant} </p>
-        <p className={styles.price}>${plant?.price}</p>
+        <Image src={`/${plant_name}.jpg`} alt={plant_name} width={300} height={300} />
+        <h3>{plant_name}</h3>
+        <p>color: {color} size: {size} </p>
+        <p>variant{variant} </p>
+        <p className={styles.price}>${price}</p>
       </article>
     </Link>
   );
