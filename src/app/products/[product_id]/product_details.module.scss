@@ -1,0 +1,53 @@
+@import '../../styles/grid';
+@import '../../styles/mixin';
+
+.productDetails {
+    @include container;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+      
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+
+    .productImage {
+      display: flex;
+      justify-content: center;
+      margin-right: 1rem;
+      margin-bottom: 2rem;
+      width: 480px;
+    }
+
+    .productInfo {
+      width: 480px;
+      p {
+        margin-top: 1rem;
+        margin-right: 12px;
+      }
+    }
+    
+    .price {
+      color: $primary-dark;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .careItems {
+      font-size: .8rem;
+      margin-bottom: 1rem;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $primary;
+      display: flex;
+      margin-top: 1rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
