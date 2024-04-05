@@ -8,16 +8,17 @@ const Footer = () => {
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h2>About Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero vitae semper fermentum.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <br /> Nulla convallis libero vitae semper fermentum.</p>
         </div>
 
-        <div className={styles.footerContent}>
+        <div className={styles.footerSection}>
           <h2>Contact Us</h2>
           <p>Email: info@example.com</p>
           <p>Phone: +1234567890</p>
         </div>
 
-        <div className={styles.footerLinks}>
+        <div className={styles.footerSection}>
           <h2>Quick Links</h2>
           <ul>
             <li><a href="#">Home</a></li>
