@@ -1,0 +1,7 @@
+@import './styles/animations.scss';
+
+.homepage {
+  @include fadeIn;
+  background-color: #DDD;
+}
+
