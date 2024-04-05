@@ -14,10 +14,13 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     setAddtoCart: (state) => {
-      state.cartState += 1
+      state.cartState += 1;
+    },
+    resetCartState: (state) => {
+      state.cartState = 0;
     }
   }
 });
 
-export const { setAddtoCart } = cartSlice.actions
+export const { setAddtoCart, resetCartState } = cartSlice.actions
 export const cartReducer = cartSlice.reducer
