@@ -6,7 +6,7 @@ const CartAction = () => {
 
   return (
     <div>
-      <button onClick={() => dispatch(setAddtoCart())}>Add to Cart</button>
+      <button className="button-primary" onClick={() => dispatch(setAddtoCart())}>Add to Cart</button>
     </div>
   )
 }
