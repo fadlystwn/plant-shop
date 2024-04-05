@@ -22,7 +22,7 @@ const ProductCard: React.FC<PlantProps> = ({ plant }) => {
         <h3>{plant?.plant_name}</h3>
         <p>color: {plant?.color} size: {plant?.size} </p>
         <p>variant{plant?.variant} </p>
-        <p class={styles.price}>${plant?.price}</p>
+        <p className={styles.price}>${plant?.price}</p>
       </article>
     </Link>
   );

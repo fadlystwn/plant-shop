@@ -1,6 +1,7 @@
 import styles from './products.module.scss';
 import { Metadata } from 'next';
 import ProductCard from '../ui/productCard';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Blossom Haven: Your Botanical Paradise Awaits',
@@ -22,11 +23,13 @@ export default async function Page() {
       <h1 className={styles.heading}>Blossom Haven: Your Botanical Paradise Awaits</h1>
       <p>Discover Nature Finest Selection at Our Premier Plant Emporium</p>
       <div className={styles.productGrid}>
-        {data.map((plant: any) => {
-          return (
-            <ProductCard key={plant.id} plant={plant} />
-          )
-        })}
+        <Suspense fallback={<div>Loading...</div>}>
+          {data && data?.map((plant: any) => {
+            return (
+              <ProductCard key={plant.id} plant={plant} />
+            )
+          })}
+        </Suspense>
       </div>
     </main >
   )
