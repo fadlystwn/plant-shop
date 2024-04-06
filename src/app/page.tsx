@@ -6,7 +6,6 @@ export default function Home() {
     <main >
       <HomeCarousel />
       <div className={styles['homepage']}>
-
         <h1>
           <Link href="/products">Go to Product Catalog</Link>
         </h1>
