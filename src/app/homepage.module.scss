@@ -1,7 +1,11 @@
-@import './styles/animations.scss';
 
 .homepage {
-  @include fadeIn;
+  display: flex;
   background-color: #DDD;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 240px;
 }
 

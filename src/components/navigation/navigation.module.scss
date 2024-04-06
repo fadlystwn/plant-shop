@@ -1,14 +1,19 @@
 @import '../../app/styles/variables.scss';
+@import '../../app/styles/mixin.scss';
+@import '../../app/styles/grid.scss';
 
 .navbar {
-    
-  display: flex;
+  @include breakpoint(md) {
+    display: flex;
+  }
+  display: none;
   justify-content: space-between;
   padding: 1rem 2rem;
   border-bottom: 1px solid $primary;
   
-
-  .navbarLeft ul, .navbarRight ul {
+  .navbarLeft,
+  .navbarRight {
+    ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
@@ -16,21 +21,84 @@
       gap: 2rem;
 
       a {
-          font-family: 'Roboto', sans-serif;
-          font-weight: normal;
-          text-decoration: none;
-          font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 1rem;
       }
-  }   
+    }
+  }
 
   .navButton {
+
+    
     button {
       cursor: pointer;
       text-transform: none;
-    }
 
-    .icon {
-      margin: -3px 0;
+      .icon {
+        margin: -3px 0;
+      }
     }
+  }
+}
+
+.closeButton {
+  @include breakpoint(md) {
+    display: none;
+  }
+  display: block;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  button {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    background-color: $primary;
+    border: none;
+    outline: none;
+    border-radius: 32px;
+    color: $primary-dark;
+  }
+
+  .navButton {
+    margin: 1rem;
+  }
+}
+
+.navbarMobile {
+  @include breakpoint(md) {
+    display: none;
+  }
+  display: block;
+  width: 100%;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-dark;
+
+    li {
+      a {
+        font-family: 'Roboto', sans-serif;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: $secondary;
+      }
+    }
+  }
+  .icon {
+    margin: -3px;
   }
 }
