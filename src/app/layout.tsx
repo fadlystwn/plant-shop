@@ -6,6 +6,8 @@ import Navigation from "@/components/navigation";
 import { store } from "@/stores/store";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
