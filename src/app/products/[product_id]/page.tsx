@@ -23,32 +23,35 @@ export default async function Page({ params }: { params: { product_id: string; }
   return (
     <div className={styles.productDetails}>
       <div className={styles.productImage}>
-        <Image
-          priority
-          src={`/${data?.plant_name.toLowerCase()}.jpg`}
-          alt={data?.plant_name}
-          width={320}
-          height={480}
-        />
+        {data.plant_name && (
+          <Image
+            priority
+            src={`/${data.plant_name.toLowerCase()}.jpg`}
+            alt={data.plant_name}
+            width={320}
+            height={480}
+          />
+        )}
       </div>
       <div className={styles.productInfo}>
-        <h1>{data?.plant_name}</h1>
+        <h1>{data.plant_name}</h1>
         <p>{data.description}</p>
         <div className={styles.action}>
-          <p className={styles.price}>${data?.price}</p>
+          <p className={styles.price}>${data.price}</p>
           <CartAction />
         </div>
         <Accordion title="Details">
-          {Object.entries(data.details).map(([key, value]) => (
-            <p className={styles.detailsItem} key={key}>{`${key}: ${value}`}</p>
-          ))}
+          {data.details &&
+            Object.entries(data.details).map(([key, value]) => (
+              <p className={styles.detailsItem} key={key}>{`${key}: ${value}`}</p>
+            ))}
         </Accordion>
         <Accordion title="Care">
-          {Object.entries(data.care).map(([key, value]) => (
-            <p className={styles.careItems} key={key}>{`${key}: ${value}`}</p>
-          ))}
+          {data.care &&
+            Object.entries(data.care).map(([key, value]) => (
+              <p className={styles.careItems} key={key}>{`${key}: ${value}`}</p>
+            ))}
         </Accordion>
-
       </div>
     </div>
   )
