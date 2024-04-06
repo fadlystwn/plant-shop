@@ -1,53 +1,56 @@
-@import '../../styles//variables.scss';
-@import '../../styles//mixin.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
 
 .productCard {
-    background-color: #fff;
-    border-radius: 0.5rem;
-    padding: .5rem;
-    text-align: center;
-    width: 320px;
-    
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: .5rem;
+  text-align: center;
+  width: 320px;
+  
+   @include breakpoint(sm) {
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px lighten($primary, 10%);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px lighten($primary, 10%);
     }
+  }
 
-    a {
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
+  a {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
 
-    @include breakpoint(xs) {
-        width: auto;
-    }
+  @include breakpoint(xs) {
+    width: 320px;
+    margin: 0 auto;
+  }
 
-    img {
-        border-radius: 0.5rem;
-        object-fit: cover;
-    }
+  img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
 
-    h3 {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-    }
+  h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 
-    p {
-        margin-top: 0.5rem;
-        font-size: 1rem;
-        color: $secondary
-    }
-    .price {
-        font-weight: bold;
-        color: $action;
-    }
+  p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: $secondary;
+  }
+  .price {
+    font-weight: bold;
+    color: $action;
+  }
 
-    button {
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background-color:$secondary;
-        color: #fff;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-    }
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color:$secondary;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
 }
