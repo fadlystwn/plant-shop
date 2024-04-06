@@ -24,11 +24,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ cartState, handleCartReset, isO
       </button>
     </div>
     {isOpen && (
-      <div className={styles.menu}>
-        <div className="animate__animated animate__slideInDown">
+      <div className="animate__animated animate__slideInDown">
+        <div className={styles.menu}>
           <ul className="animate__animated animate__fadeIn ">
             <li><Link href="/">Home</Link></li>
-            <li><a href="#">Care</a></li>
+            <li><Link href="/products">Catalog</Link></li>
             <li><a href="#">Sale</a></li>
           </ul>
           <ul className="animate__animated animate__fadeIn ">
